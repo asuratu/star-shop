@@ -1,0 +1,2 @@
+2023-03-12 16:22:37.673 [DEBU] {c0920730519e4b177d045f2f21798795} [ 10 ms] [default] [gf-shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-03-12 16:22:37.689 [DEBU] {c0920730519e4b177d045f2f21798795} [ 15 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `rotation_info`(`sort`,`created_at`,`pic_url`,`updated_at`,`link`) VALUES(1,'2023-03-12 16:22:37','http://dummyimage.com/180x150','2023-03-12 16:22:37','http://dridqcuh.kz/hjboagd') 
