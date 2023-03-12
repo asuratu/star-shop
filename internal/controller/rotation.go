@@ -28,3 +28,11 @@ func (a *cRotation) Create(ctx context.Context, req *backend.RotationAddReq) (re
 		RotationId: out.RotationId,
 	}, nil
 }
+
+func (a *cRotation) Delete(ctx context.Context, req *backend.RotationDeleteReq) (res *backend.RotationDeleteRes, err error) {
+	err = service.Rotation().Delete(ctx, req.RotationId)
+	if err != nil {
+		return nil, err
+	}
+	return
+}

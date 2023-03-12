@@ -1,2 +1,38 @@
 2023-03-12 16:22:37.673 [DEBU] {c0920730519e4b177d045f2f21798795} [ 10 ms] [default] [gf-shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
 2023-03-12 16:22:37.689 [DEBU] {c0920730519e4b177d045f2f21798795} [ 15 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `rotation_info`(`sort`,`created_at`,`pic_url`,`updated_at`,`link`) VALUES(1,'2023-03-12 16:22:37','http://dummyimage.com/180x150','2023-03-12 16:22:37','http://dridqcuh.kz/hjboagd') 
+2023-03-12 17:19:57.445 [DEBU] {30cc061372a14b17a3bc79465fcc2615} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:1] BEGIN
+2023-03-12 17:19:57.447 [DEBU] {30cc061372a14b17a3bc79465fcc2615} [  2 ms] [default] [gf-shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-03-12 17:19:57.449 [DEBU] {30cc061372a14b17a3bc79465fcc2615} [  2 ms] [default] [gf-shop] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:19:57' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-03-12 17:19:57.453 [DEBU] {30cc061372a14b17a3bc79465fcc2615} [  3 ms] [default] [gf-shop] [rows:0  ] [txid:1] COMMIT
+2023-03-12 17:20:13.011 [DEBU] {e05ff2b275a14b17a4bc7946b8b3d9a1} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:2] BEGIN
+2023-03-12 17:20:13.012 [DEBU] {e05ff2b275a14b17a4bc7946b8b3d9a1} [  0 ms] [default] [gf-shop] [rows:1  ] [txid:2] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:20:13' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-03-12 17:20:13.014 [DEBU] {e05ff2b275a14b17a4bc7946b8b3d9a1} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] COMMIT
+2023-03-12 17:20:17.746 [DEBU] {a0ff21cd76a14b17a5bc794632514c4d} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:3] BEGIN
+2023-03-12 17:20:17.752 [DEBU] {a0ff21cd76a14b17a5bc794632514c4d} [  5 ms] [default] [gf-shop] [rows:0  ] [txid:3] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:20:17' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-03-12 17:20:17.753 [DEBU] {a0ff21cd76a14b17a5bc794632514c4d} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:3] COMMIT
+2023-03-12 17:20:18.438 [DEBU] {68886bf676a14b17a6bc7946c95c7188} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:4] BEGIN
+2023-03-12 17:20:18.439 [DEBU] {68886bf676a14b17a6bc7946c95c7188} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:4] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:20:18' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-03-12 17:20:18.439 [DEBU] {68886bf676a14b17a6bc7946c95c7188} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:4] COMMIT
+2023-03-12 17:21:06.679 [DEBU] {58f8ba3182a14b17aabc79464075fe16} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:5] BEGIN
+2023-03-12 17:21:06.680 [DEBU] {58f8ba3182a14b17aabc79464075fe16} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:5] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:21:06' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-03-12 17:21:06.681 [DEBU] {58f8ba3182a14b17aabc79464075fe16} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:5] COMMIT
+2023-03-12 17:21:09.780 [DEBU] {002d93ea82a14b17abbc7946671617dc} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:6] BEGIN
+2023-03-12 17:21:09.780 [DEBU] {002d93ea82a14b17abbc7946671617dc} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:6] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:21:09' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-03-12 17:21:09.781 [DEBU] {002d93ea82a14b17abbc7946671617dc} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:6] COMMIT
+2023-03-12 17:29:52.392 [DEBU] {08ae8798fca14b171e26572cbfbfe708} [  2 ms] [default] [gf-shop] [rows:0  ] [txid:1] BEGIN
+2023-03-12 17:29:52.395 [DEBU] {08ae8798fca14b171e26572cbfbfe708} [  2 ms] [default] [gf-shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-03-12 17:29:52.397 [DEBU] {08ae8798fca14b171e26572cbfbfe708} [  2 ms] [default] [gf-shop] [rows:0  ] [txid:1] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:29:52' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-03-12 17:29:52.398 [DEBU] {08ae8798fca14b171e26572cbfbfe708} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:1] COMMIT
+2023-03-12 17:29:53.502 [DEBU] {7038e4dafca14b171f26572c22197049} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:2] BEGIN
+2023-03-12 17:29:53.503 [DEBU] {7038e4dafca14b171f26572c22197049} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:2] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:29:53' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-03-12 17:29:53.504 [DEBU] {7038e4dafca14b171f26572c22197049} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:2] COMMIT
+2023-03-12 17:32:13.669 [DEBU] {60466e7d1da24b172026572c17ef6150} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:3] BEGIN
+2023-03-12 17:32:13.671 [DEBU] {60466e7d1da24b172026572c17ef6150} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:3] UPDATE `rotation_info` SET `deleted_at`='2023-03-12 17:32:13' WHERE (`id`=11) AND `deleted_at` IS NULL
+2023-03-12 17:32:13.671 [DEBU] {60466e7d1da24b172026572c17ef6150} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:3] COMMIT
+2023-03-12 17:33:47.825 [DEBU] {3827686933a24b179524a62888cfd851} [  2 ms] [default] [gf-shop] [rows:0  ] [txid:1] BEGIN
+2023-03-12 17:33:47.829 [DEBU] {3827686933a24b179524a62888cfd851} [  3 ms] [default] [gf-shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-03-12 17:33:47.834 [DEBU] {3827686933a24b179524a62888cfd851} [  5 ms] [default] [gf-shop] [rows:0  ] [txid:1] DELETE FROM `rotation_info` WHERE `id`=11
+2023-03-12 17:33:47.834 [DEBU] {3827686933a24b179524a62888cfd851} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:1] COMMIT
+2023-03-12 17:33:51.949 [DEBU] {0090775f34a24b179624a628b073cf41} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:2] BEGIN
+2023-03-12 17:33:51.954 [DEBU] {0090775f34a24b179624a628b073cf41} [  4 ms] [default] [gf-shop] [rows:1  ] [txid:2] DELETE FROM `rotation_info` WHERE `id`=1
+2023-03-12 17:33:51.956 [DEBU] {0090775f34a24b179624a628b073cf41} [  2 ms] [default] [gf-shop] [rows:0  ] [txid:2] COMMIT

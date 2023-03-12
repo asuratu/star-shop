@@ -2,9 +2,9 @@ package model
 
 // RotationCreateUpdateBase 创建/修改轮播图基类
 type RotationCreateUpdateBase struct {
-	PicUrl string
-	Link   string
-	Sort   int
+	PicUrl string `json:"pic_url"`
+	Link   string `json:"link"`
+	Sort   int    `json:"sort"`
 }
 
 // RotationCreateInput 创建轮播图
