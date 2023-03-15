@@ -5,6 +5,8 @@ import (
 	"shop/api/v1/backend"
 	"shop/internal/model"
 	"shop/internal/service"
+
+	"github.com/gogf/gf/v2/net/ghttp"
 )
 
 // Rotation 内容管理
@@ -38,7 +40,6 @@ func (a *cRotation) Delete(ctx context.Context, req *backend.RotationDeleteReq) 
 
 func (a *cRotation) Update(ctx context.Context, req *backend.RotationUpdateReq) (res *backend.RotationUpdateRes, err error) {
 	// 获取 path 中的 id
-	id := ctx.Value("id").(uint)
 	err = service.Rotation().Update(ctx, model.RotationUpdateInput{
 		RotationCreateUpdateBase: model.RotationCreateUpdateBase{
 			PicUrl: req.PicUrl,
@@ -46,7 +47,7 @@ func (a *cRotation) Update(ctx context.Context, req *backend.RotationUpdateReq) 
 			Sort:   req.Sort,
 		},
 		// 获取 path 中的 id
-		Id: ctx.Value("id").(uint),
+		Id: ghttp.RequestFromCtx(ctx).Get("id").Uint(),
 	})
 	if err != nil {
 		return nil, err

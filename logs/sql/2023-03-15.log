@@ -1,0 +1,4 @@
+2023-03-15 16:25:57.692 [DEBU] {d05277763d8a4c17021a4a59a646f0fa} [  3 ms] [default] [gf-shop] [rows:0  ] [txid:1] BEGIN
+2023-03-15 16:25:57.698 [DEBU] {d05277763d8a4c17021a4a59a646f0fa} [  5 ms] [default] [gf-shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-03-15 16:25:57.712 [DEBU] {d05277763d8a4c17021a4a59a646f0fa} [ 14 ms] [default] [gf-shop] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `pic_url`='http://dummyimage.com/240x400',`link`='http://bfxbothll.gh/miurzmwpn',`sort`=12,`updated_at`='2023-03-15 16:25:57' WHERE (`id`=8) AND `deleted_at` IS NULL
+2023-03-15 16:25:57.716 [DEBU] {d05277763d8a4c17021a4a59a646f0fa} [  3 ms] [default] [gf-shop] [rows:0  ] [txid:1] COMMIT
