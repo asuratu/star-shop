@@ -2,6 +2,7 @@ package content
 
 import (
 	"context"
+	"shop/internal/consts"
 
 	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/frame/g"
@@ -24,7 +25,7 @@ func New() *sRotation {
 }
 
 // Create 创建
-func (s *sRotation) Create(ctx context.Context, in model.RotationCreateInput) (out model.RotationCreateOutput, err error) {
+func (s *sRotation) Create(ctx context.Context, in model.RotationCreateInput) (out *model.RotationCreateOutput, err error) {
 	// 不允许HTML代码
 	if err = ghtml.SpecialCharsMapOrStruct(in); err != nil {
 		return out, err
@@ -33,7 +34,7 @@ func (s *sRotation) Create(ctx context.Context, in model.RotationCreateInput) (o
 	if err != nil {
 		return out, err
 	}
-	return model.RotationCreateOutput{RotationId: uint(lastInsertID)}, err
+	return &model.RotationCreateOutput{RotationId: uint(lastInsertID)}, err
 }
 
 // Delete 删除
@@ -62,4 +63,40 @@ func (s *sRotation) Update(ctx context.Context, in model.RotationUpdateInput) er
 			Update()
 		return err
 	})
+}
+
+// Index 分页获取列表
+func (s *sRotation) Index(ctx context.Context, in model.RotationGetListInput) (out *model.RotationGetListOutput, err error) {
+	var (
+		m = dao.RotationInfo.Ctx(ctx)
+	)
+	out = &model.RotationGetListOutput{
+		Page: in.Page,
+		Size: in.Size,
+	}
+
+	// 分页查询
+	listModel := m.Page(in.Page, in.Size)
+	// 排序方式
+	switch in.Sort {
+	case consts.RotationSortByCreateTimeDesc:
+		listModel = listModel.OrderDesc(dao.RotationInfo.Columns().CreatedAt)
+	case consts.RotationSortByUpdateTimeDesc:
+		listModel = listModel.OrderDesc(dao.RotationInfo.Columns().UpdatedAt)
+	default:
+		listModel = listModel.OrderDesc(dao.RotationInfo.Columns().Id)
+	}
+	// 执行查询
+	if err := listModel.Scan(&out.List); err != nil {
+		return out, err
+	}
+	// 没有数据
+	if len(out.List) == 0 {
+		return out, nil
+	}
+	out.Total, err = m.Count()
+	if err != nil {
+		return out, err
+	}
+	return out, nil
 }

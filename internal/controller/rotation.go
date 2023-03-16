@@ -2,7 +2,7 @@ package controller
 
 import (
 	"context"
-
+	v1 "shop/api/v1"
 	"shop/api/v1/backend"
 	"shop/internal/model"
 	"shop/internal/service"
@@ -54,4 +54,23 @@ func (a *cRotation) Update(ctx context.Context, req *backend.RotationUpdateReq) 
 		return nil, err
 	}
 	return
+}
+
+func (a *cRotation) Index(ctx context.Context, req *backend.RotationGetListReq) (res *backend.RotationGetListRes, err error) {
+	out, err := service.Rotation().Index(ctx, model.RotationGetListInput{
+		Page: req.Page,
+		Size: req.Size,
+		Sort: req.Sort,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &backend.RotationGetListRes{
+		CommonPaginationRes: v1.CommonPaginationRes{
+			Total: out.Total,
+			Page:  out.Page,
+			Size:  out.Size,
+		},
+		List: out.List,
+	}, nil
 }

@@ -1,6 +1,8 @@
 package backend
 
 import (
+	v1 "shop/api/v1"
+
 	"github.com/gogf/gf/v2/frame/g"
 )
 
@@ -33,13 +35,22 @@ type RotationUpdateReq struct {
 
 type RotationUpdateRes struct{}
 
-type RotationGetListContentReq struct {
+type RotationGetListReq struct {
 	g.Meta `path:"/rotations" method:"get" tags:"Rotation" summary:"分页获取轮播图列表"`
-	Page   int `json:"page"       dc:"分页码"`
-	Size   int `json:"size"       dc:"分页数量"`
 	// sort: 1:按照创建时间排序 2:按照更新时间排序
-	Sort string `json:"sort" v:"required|in:1,2#排序方式不能为空|排序方式错误" dc:"排序方式"`
+	Sort int `json:"sort" v:"required|in:1,2#排序方式不能为空|排序方式错误" dc:"排序方式"`
+	v1.CommonPaginationReq
 }
-type RotationGetListContentRes struct {
-	Content string `json:"content" dc:"HTML内容"`
+type RotationGetListRes struct {
+	v1.CommonPaginationRes
+	// list 为 interface{} 类型, 就不用做结构体类型转换了
+	List interface{} `json:"list"`
+}
+type RotationDetailRes struct {
+	Id        uint   `json:"id"`
+	PicUrl    string `json:"pic_url"`
+	Link      string `json:"link"`
+	Sort      int    `json:"sort"`
+	CreatedAt string `json:"created_at"`
+	UpdatedAt string `json:"updated_at"`
 }
