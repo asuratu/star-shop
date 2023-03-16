@@ -72,3 +72,8 @@
 2023-03-16 17:49:53.805 [DEBU] {d0a16c9766dd4c1710a143349afaf374} [  4 ms] [default] [gf-shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
 2023-03-16 17:49:53.807 [DEBU] {d0a16c9766dd4c1710a143349afaf374} [  1 ms] [default] [gf-shop] [rows:2  ] SELECT `id`,`pic_url`,`link`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 10,5
 2023-03-16 17:49:53.809 [DEBU] {d0a16c9766dd4c1710a143349afaf374} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2023-03-16 20:00:58.635 [DEBU] {38a5fbc38de44c17f47ada3f07e78b81} [  3 ms] [default] [gf-shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-03-16 20:00:58.636 [DEBU] {38a5fbc38de44c17f47ada3f07e78b81} [  0 ms] [default] [gf-shop] [rows:2  ] SELECT `id`,`pic_url`,`link`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 10,5
+2023-03-16 20:00:58.637 [DEBU] {38a5fbc38de44c17f47ada3f07e78b81} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2023-03-16 20:00:59.839 [DEBU] {082eec0b8ee44c17f57ada3f2d0f4ba6} [  0 ms] [default] [gf-shop] [rows:2  ] SELECT `id`,`pic_url`,`link`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 10,5
+2023-03-16 20:00:59.841 [DEBU] {082eec0b8ee44c17f57ada3f2d0f4ba6} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
