@@ -26,6 +26,7 @@ var (
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Bind(
 					controller.Rotation,
+					controller.Position,
 				)
 			})
 			s.Run()

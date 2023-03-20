@@ -1,17 +1,16 @@
-package content
+package rotation
 
 import (
 	"context"
+
 	"shop/internal/consts"
-
-	"github.com/gogf/gf/v2/database/gdb"
-	"github.com/gogf/gf/v2/frame/g"
-
 	"shop/internal/dao"
 	"shop/internal/model"
 	"shop/internal/service"
 
+	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/encoding/ghtml"
+	"github.com/gogf/gf/v2/frame/g"
 )
 
 type sRotation struct{}

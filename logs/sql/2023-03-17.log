@@ -1,0 +1,3 @@
+2023-03-17 09:36:05.520 [DEBU] {a0a018c908114d1732172e4a69a11fbf} [ 10 ms] [default] [gf-shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-03-17 09:36:05.525 [DEBU] {a0a018c908114d1732172e4a69a11fbf} [  5 ms] [default] [gf-shop] [rows:2  ] SELECT `id`,`pic_url`,`link`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 10,5
+2023-03-17 09:36:05.525 [DEBU] {a0a018c908114d1732172e4a69a11fbf} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL

@@ -1,0 +1,91 @@
+2023-03-20 11:14:44.506 [DEBU] {4011bb9a28024e17bc3f89253f1a291e} [ 25 ms] [default] [gf-shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-03-20 11:14:44.520 [DEBU] {4011bb9a28024e17bc3f89253f1a291e} [ 14 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`link`,`sort`,`created_at`,`updated_at`) VALUES('http://dummyimage.com/120x60','http://yypbiyi.nz/hbcygud',1,'2023-03-20 11:14:44','2023-03-20 11:14:44') 
+2023-03-20 11:15:03.537 [DEBU] {b858d20a2d024e17bd3f8925eb6a3997} [  3 ms] [default] [gf-shop] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 11:15:03.541 [DEBU] {b858d20a2d024e17bd3f8925eb6a3997} [  4 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `position_info`(`goods_id`,`pic_url`,`created_at`,`link`,`updated_at`,`sort`,`goods_name`) VALUES(81,'http://dummyimage.com/120x60','2023-03-20 11:15:03','http://yypbiyi.nz/hbcygud','2023-03-20 11:15:03',1,'它') 
+2023-03-20 11:15:04.476 [DEBU] {00b4d3422d024e17be3f89256e34f163} [  2 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `position_info`(`updated_at`,`sort`,`goods_name`,`goods_id`,`created_at`,`link`,`pic_url`) VALUES('2023-03-20 11:15:04',1,'它',81,'2023-03-20 11:15:04','http://yypbiyi.nz/hbcygud','http://dummyimage.com/120x60') 
+2023-03-20 11:15:05.119 [DEBU] {586639692d024e17bf3f8925eab81c28} [  1 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `position_info`(`created_at`,`pic_url`,`link`,`goods_id`,`updated_at`,`sort`,`goods_name`) VALUES('2023-03-20 11:15:05','http://dummyimage.com/120x60','http://yypbiyi.nz/hbcygud',81,'2023-03-20 11:15:05',1,'它') 
+2023-03-20 11:15:27.818 [DEBU] {f05cf8b132024e17c03f89252c472977} [  4 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `position_info`(`goods_id`,`created_at`,`pic_url`,`updated_at`,`link`,`sort`,`goods_name`) VALUES(93,'2023-03-20 11:15:27','http://dummyimage.com/160x600','2023-03-20 11:15:27','http://jynbisii.cu/munsfcey',1,'万') 
+2023-03-20 11:15:30.884 [DEBU] {5872dc6833024e17c13f8925d109886e} [  2 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `position_info`(`sort`,`goods_name`,`goods_id`,`created_at`,`link`,`pic_url`,`updated_at`) VALUES(1,'低',96,'2023-03-20 11:15:30','http://slcnbfezx.dm/gkoomhxgj','http://dummyimage.com/336x280','2023-03-20 11:15:30') 
+2023-03-20 15:58:13.189 [DEBU] {4889e2c0a0114e17d297572be27dc728} [  2 ms] [default] [gf-shop] [rows:0  ] [txid:1] BEGIN
+2023-03-20 15:58:13.194 [DEBU] {4889e2c0a0114e17d297572be27dc728} [  4 ms] [default] [gf-shop] [rows:9  ] [txid:1] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 15:58:13.196 [DEBU] {4889e2c0a0114e17d297572be27dc728} [  2 ms] [default] [gf-shop] [rows:1  ] [txid:1] DELETE FROM `position_info` WHERE `id`=3
+2023-03-20 15:58:13.199 [DEBU] {4889e2c0a0114e17d297572be27dc728} [  3 ms] [default] [gf-shop] [rows:0  ] [txid:1] COMMIT
+2023-03-20 15:58:17.305 [DEBU] {d8c484b6a1114e17d397572b89f62025} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:2] BEGIN
+2023-03-20 15:58:17.307 [DEBU] {d8c484b6a1114e17d397572b89f62025} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] DELETE FROM `position_info` WHERE `id`=1
+2023-03-20 15:58:17.308 [DEBU] {d8c484b6a1114e17d397572b89f62025} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] COMMIT
+2023-03-20 15:58:18.254 [DEBU] {186e12efa1114e17d497572bacbf12c0} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:3] BEGIN
+2023-03-20 15:58:18.255 [DEBU] {186e12efa1114e17d497572bacbf12c0} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:3] DELETE FROM `position_info` WHERE `id`=1
+2023-03-20 15:58:18.256 [DEBU] {186e12efa1114e17d497572bacbf12c0} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:3] COMMIT
+2023-03-20 15:58:21.362 [DEBU] {e8fc49a8a2114e17d597572b7eccfbaf} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:4] BEGIN
+2023-03-20 15:58:21.363 [DEBU] {e8fc49a8a2114e17d597572b7eccfbaf} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:4] DELETE FROM `position_info` WHERE `id`=3
+2023-03-20 15:58:21.364 [DEBU] {e8fc49a8a2114e17d597572b7eccfbaf} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:4] COMMIT
+2023-03-20 15:58:45.505 [DEBU] {b0371647a8114e1791150b4b346b7c36} [  2 ms] [default] [gf-shop] [rows:0  ] [txid:1] BEGIN
+2023-03-20 15:58:45.510 [DEBU] {b0371647a8114e1791150b4b346b7c36} [  4 ms] [default] [gf-shop] [rows:9  ] [txid:1] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 15:58:45.516 [DEBU] {b0371647a8114e1791150b4b346b7c36} [  6 ms] [default] [gf-shop] [rows:0  ] [txid:1] UPDATE `position_info` SET `deleted_at`='2023-03-20 15:58:45' WHERE (`id`=3) AND `deleted_at` IS NULL
+2023-03-20 15:58:45.525 [DEBU] {b0371647a8114e1791150b4b346b7c36} [  9 ms] [default] [gf-shop] [rows:0  ] [txid:1] COMMIT
+2023-03-20 15:58:46.172 [DEBU] {a833136fa8114e1792150b4b93c530ff} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] BEGIN
+2023-03-20 15:58:46.173 [DEBU] {a833136fa8114e1792150b4b93c530ff} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] UPDATE `position_info` SET `deleted_at`='2023-03-20 15:58:46' WHERE (`id`=3) AND `deleted_at` IS NULL
+2023-03-20 15:58:46.174 [DEBU] {a833136fa8114e1792150b4b93c530ff} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] COMMIT
+2023-03-20 15:58:49.499 [DEBU] {705f6735a9114e1793150b4bea7065a8} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:3] BEGIN
+2023-03-20 15:58:49.501 [DEBU] {705f6735a9114e1793150b4bea7065a8} [  2 ms] [default] [gf-shop] [rows:1  ] [txid:3] UPDATE `position_info` SET `deleted_at`='2023-03-20 15:58:49' WHERE (`id`=4) AND `deleted_at` IS NULL
+2023-03-20 15:58:49.505 [DEBU] {705f6735a9114e1793150b4bea7065a8} [  3 ms] [default] [gf-shop] [rows:0  ] [txid:3] COMMIT
+2023-03-20 17:25:01.914 [DEBU] {b0ef37815d164e17370f332219b6df91} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:1] BEGIN
+2023-03-20 17:25:01.922 [DEBU] {b0ef37815d164e17370f332219b6df91} [  6 ms] [default] [gf-shop] [rows:9  ] [txid:1] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 17:25:01.927 [DEBU] {b0ef37815d164e17370f332219b6df91} [  4 ms] [default] [gf-shop] [rows:1  ] [txid:1] UPDATE `position_info` SET `goods_name`='住',`goods_id`=68,`updated_at`='2023-03-20 17:25:01',`pic_url`='http://dummyimage.com/160x600',`link`='http://ollq.hn/kcsnsqoh',`sort`=1 WHERE (`id`=5) AND `deleted_at` IS NULL
+2023-03-20 17:25:01.931 [DEBU] {b0ef37815d164e17370f332219b6df91} [  3 ms] [default] [gf-shop] [rows:0  ] [txid:1] COMMIT
+2023-03-20 17:25:09.027 [DEBU] {98e5ba285f164e17380f3322621b3ef1} [ 11 ms] [default] [gf-shop] [rows:0  ] [txid:2] BEGIN
+2023-03-20 17:25:09.030 [DEBU] {98e5ba285f164e17380f3322621b3ef1} [  3 ms] [default] [gf-shop] [rows:0  ] [txid:2] UPDATE `position_info` SET `pic_url`='http://dummyimage.com/160x600',`sort`=1,`updated_at`='2023-03-20 17:25:09',`link`='http://ollq.hn/kcsnsqoh',`goods_name`='住',`goods_id`=68 WHERE (`id`=15) AND `deleted_at` IS NULL
+2023-03-20 17:25:09.031 [DEBU] {98e5ba285f164e17380f3322621b3ef1} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] COMMIT
+2023-03-20 17:25:10.120 [DEBU] {b0f14f6a5f164e17390f3322b769aadf} [  2 ms] [default] [gf-shop] [rows:0  ] [txid:3] BEGIN
+2023-03-20 17:25:10.125 [DEBU] {b0f14f6a5f164e17390f3322b769aadf} [  4 ms] [default] [gf-shop] [rows:0  ] [txid:3] UPDATE `position_info` SET `sort`=1,`goods_name`='住',`goods_id`=68,`pic_url`='http://dummyimage.com/160x600',`updated_at`='2023-03-20 17:25:10',`link`='http://ollq.hn/kcsnsqoh' WHERE (`id`=15) AND `deleted_at` IS NULL
+2023-03-20 17:25:10.126 [DEBU] {b0f14f6a5f164e17390f3322b769aadf} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:3] COMMIT
+2023-03-20 17:25:11.004 [DEBU] {e085f29e5f164e173a0f332296960ce3} [  3 ms] [default] [gf-shop] [rows:0  ] [txid:4] BEGIN
+2023-03-20 17:25:11.009 [DEBU] {e085f29e5f164e173a0f332296960ce3} [  5 ms] [default] [gf-shop] [rows:0  ] [txid:4] UPDATE `position_info` SET `goods_id`=68,`pic_url`='http://dummyimage.com/160x600',`updated_at`='2023-03-20 17:25:11',`link`='http://ollq.hn/kcsnsqoh',`sort`=1,`goods_name`='住' WHERE (`id`=15) AND `deleted_at` IS NULL
+2023-03-20 17:25:11.009 [DEBU] {e085f29e5f164e173a0f332296960ce3} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:4] COMMIT
+2023-03-20 17:27:55.593 [DEBU] {00c204f185164e17c4fa537ae9cadfa4} [  5 ms] [default] [gf-shop] [rows:0  ] [txid:1] BEGIN
+2023-03-20 17:27:55.607 [DEBU] {00c204f185164e17c4fa537ae9cadfa4} [ 13 ms] [default] [gf-shop] [rows:9  ] [txid:1] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 17:27:55.608 [DEBU] {00c204f185164e17c4fa537ae9cadfa4} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:1] UPDATE `position_info` SET `updated_at`='2023-03-20 17:27:55',`goods_name`='住',`sort`=1,`goods_id`=68,`pic_url`='http://dummyimage.com/160x600',`link`='http://ollq.hn/kcsnsqoh' WHERE (`id`=15) AND `deleted_at` IS NULL
+2023-03-20 17:27:55.608 [DEBU] {00c204f185164e17c4fa537ae9cadfa4} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:1] COMMIT
+2023-03-20 17:27:58.581 [DEBU] {08ab8da386164e17c5fa537a3799cf5e} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:2] BEGIN
+2023-03-20 17:27:58.583 [DEBU] {08ab8da386164e17c5fa537a3799cf5e} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] UPDATE `position_info` SET `goods_name`='住',`goods_id`=68,`updated_at`='2023-03-20 17:27:58',`pic_url`='http://dummyimage.com/160x600',`link`='http://ollq.hn/kcsnsqoh',`sort`=1 WHERE (`id`=15) AND `deleted_at` IS NULL
+2023-03-20 17:27:58.584 [DEBU] {08ab8da386164e17c5fa537a3799cf5e} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:2] COMMIT
+2023-03-20 17:28:05.135 [DEBU] {90fa232a88164e17c6fa537acc9a7685} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:3] BEGIN
+2023-03-20 17:28:05.139 [DEBU] {90fa232a88164e17c6fa537acc9a7685} [  4 ms] [default] [gf-shop] [rows:0  ] [txid:3] UPDATE `position_info` SET `updated_at`='2023-03-20 17:28:05',`pic_url`='http://dummyimage.com/160x600',`link`='http://ollq.hn/kcsnsqoh',`sort`=1,`goods_name`='住',`goods_id`=68 WHERE (`id`=15) AND `deleted_at` IS NULL
+2023-03-20 17:28:05.142 [DEBU] {90fa232a88164e17c6fa537acc9a7685} [  2 ms] [default] [gf-shop] [rows:0  ] [txid:3] COMMIT
+2023-03-20 17:29:23.856 [DEBU] {282af67d9a164e17c7fa537a11280aab} [  4 ms] [default] [gf-shop] [rows:0  ] [txid:4] BEGIN
+2023-03-20 17:29:23.857 [DEBU] {282af67d9a164e17c7fa537a11280aab} [  0 ms] [default] [gf-shop] [rows:0  ] [txid:4] UPDATE `position_info` SET `link`='http://ollq.hn/kcsnsqoh',`sort`=1,`goods_name`='住',`goods_id`=68,`pic_url`='http://dummyimage.com/160x600',`updated_at`='2023-03-20 17:29:23' WHERE (`id`=15) AND `deleted_at` IS NULL
+2023-03-20 17:29:23.858 [DEBU] {282af67d9a164e17c7fa537a11280aab} [  1 ms] [default] [gf-shop] [rows:0  ] [txid:4] COMMIT
+2023-03-20 17:46:18.040 [DEBU] {30a10da086174e171f3304092f5bb464} [  4 ms] [default] [gf-shop] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 17:46:18.043 [DEBU] {30a10da086174e171f3304092f5bb464} [  2 ms] [default] [gf-shop] [rows:0  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 10,5
+2023-03-20 17:46:24.918 [DEBU] {08ac573a88174e17203304095321e173} [  0 ms] [default] [gf-shop] [rows:3  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 0,5
+2023-03-20 17:46:24.920 [DEBU] {08ac573a88174e17203304095321e173} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:46:33.413 [DEBU] {5006a0348a174e17213304098f82adcc} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 0,1
+2023-03-20 17:46:33.421 [DEBU] {5006a0348a174e17213304098f82adcc} [  7 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:46:42.021 [DEBU] {f0a963358c174e172233040910e23895} [  6 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 1,1
+2023-03-20 17:46:42.023 [DEBU] {f0a963358c174e172233040910e23895} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:46:53.087 [DEBU] {70d94fc98e174e1723330409ea05af64} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 2,1
+2023-03-20 17:46:53.088 [DEBU] {70d94fc98e174e1723330409ea05af64} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:47:48.405 [DEBU] {18f07aaa9b174e1724330409c3b07896} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 0,1
+2023-03-20 17:47:48.408 [DEBU] {18f07aaa9b174e1724330409c3b07896} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:48:19.470 [DEBU] {3893e8e5a2174e17f8581f05f1270339} [  4 ms] [default] [gf-shop] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 17:48:19.472 [DEBU] {3893e8e5a2174e17f8581f05f1270339} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 0,1
+2023-03-20 17:48:19.474 [DEBU] {3893e8e5a2174e17f8581f05f1270339} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:49:08.787 [DEBU] {68b55561ae174e179fb330724afd26b6} [  5 ms] [default] [gf-shop] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 17:49:08.789 [DEBU] {68b55561ae174e179fb330724afd26b6} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 0,1
+2023-03-20 17:49:08.794 [DEBU] {68b55561ae174e179fb330724afd26b6} [  5 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:49:14.666 [DEBU] {48c41ac0af174e17a0b330725f82dbf4} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 1,1
+2023-03-20 17:49:14.666 [DEBU] {48c41ac0af174e17a0b330725f82dbf4} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:52:03.327 [DEBU] {f8750105d7174e17a1b33072c0b19f82} [  2 ms] [default] [gf-shop] [rows:0  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 10,10
+2023-03-20 17:52:04.574 [DEBU] {40a96d4fd7174e17a2b330722a491202} [  0 ms] [default] [gf-shop] [rows:0  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 10,10
+2023-03-20 17:52:05.579 [DEBU] {281a568bd7174e17a3b330724682a565} [  0 ms] [default] [gf-shop] [rows:0  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 10,10
+2023-03-20 17:52:11.428 [DEBU] {e895f3e7d8174e17a4b330726b1fca81} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 0,1
+2023-03-20 17:52:11.429 [DEBU] {e895f3e7d8174e17a4b330726b1fca81} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:52:13.193 [DEBU] {98112251d9174e17a5b33072bd9d6ea4} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 0,1
+2023-03-20 17:52:13.195 [DEBU] {98112251d9174e17a5b33072bd9d6ea4} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:52:14.190 [DEBU] {1858898cd9174e17a6b33072eff7b915} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 0,1
+2023-03-20 17:52:14.191 [DEBU] {1858898cd9174e17a6b33072eff7b915} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:52:19.430 [DEBU] {a8faeac4da174e17a7b3307241088ccd} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` DESC LIMIT 1,1
+2023-03-20 17:52:19.431 [DEBU] {a8faeac4da174e17a7b3307241088ccd} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-03-20 17:59:19.353 [DEBU] {60abdd893c184e17e514181bc3f6b26c} [  5 ms] [default] [gf-shop] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2023-03-20 17:59:19.357 [DEBU] {60abdd893c184e17e514181bc3f6b26c} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 1,1
+2023-03-20 17:59:19.362 [DEBU] {60abdd893c184e17e514181bc3f6b26c} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
