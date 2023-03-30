@@ -8,9 +8,9 @@ server:
   routeOverWrite:      true
   accessLogEnabled:    false
   accessLogPattern:    "access-{Ymd}.log"
-  sessionPath:         "temp/sessions"    # Session文件存储目录
   openapiPath:         "/api.json"
   swaggerPath:         "/swagger"
+  #  sessionPath:         "temp/sessions"    # Session文件存储目录
 
 # 数据库连接配置
 database:
@@ -24,6 +24,14 @@ database:
     link:   "mysql:root:@tcp(127.0.0.1:3306)/gf-shop"
 #    link:   "sqlite::@file(manifest/document/sqlite/focus.db)"
     debug:  true
+
+# Redis 配置示例
+redis:
+  default:
+    address: 127.0.0.1:6379
+    db: 6
+    pass: ""
+    idleTimeout: 600  # 连接空闲超时时间，单位秒
 
 # 内容设置
 setting:

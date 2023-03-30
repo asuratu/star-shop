@@ -1,0 +1,514 @@
+2023-03-30 12:00:52.464 [DEBU] {68d954c07a16511791de4c643e5d19b5} [  9 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 12:00:52.471 [DEBU] {68d954c07a16511791de4c643e5d19b5} [  6 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `admin_info`(`created_at`,`role_ids`,`updated_at`,`user_salt`,`is_admin`,`name`,`password`) VALUES('2023-03-30 12:00:52','','2023-03-30 12:00:52','ighmFeS8zb',0,'Brown','55d4464f859a56540d374d690f2929b7') 
+2023-03-30 12:05:56.738 [DEBU] {b02abf98c1165117bbb18801e311487d} [  4 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 12:05:56.741 [ERRO] {b02abf98c1165117bbb18801e311487d} [  3 ms] [default] [gf-shop] [rows:0  ] INSERT INTO `admin_info`(`created_at`,`user_salt`,`updated_at`,`is_admin`,`name`,`password`,`role_ids`) VALUES('2023-03-30 12:05:56','YLNvzsdtop','2023-03-30 12:05:56',0,'Brown','d4e001938d74673c67606a124bd0278e','') 
+Error: Error 1062: Duplicate entry 'Brown' for key 'admin_info.name_unique'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  shop/internal/logic/admin.(*sAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/logic/admin/admin.go:41
+9.  shop/internal/controller.(*cAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/controller/admin.go:20
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-03-30 12:06:02.479 [DEBU] {c01cfceec2165117bcb188016f034629} [  4 ms] [default] [gf-shop] [rows:1  ] INSERT INTO `admin_info`(`password`,`created_at`,`user_salt`,`is_admin`,`name`,`role_ids`,`updated_at`) VALUES('1e48e3941f9e9f4749c9ce95efbad532','2023-03-30 12:06:02','sG23qurSUq',0,'Brown1','','2023-03-30 12:06:02') 
+2023-03-30 13:13:55.720 [ERRO] {e89e2f4f771a5117bdb18801abcaabcd} [  1 ms] [default] [gf-shop] [rows:0  ] INSERT INTO `admin_info`(`password`,`updated_at`,`role_ids`,`user_salt`,`is_admin`,`name`,`created_at`) VALUES('5df25dca4039de7ce16e20d91f4502f1','2023-03-30 13:13:55','','Kv4KC0t8Ag',0,'Brown1','2023-03-30 13:13:55') 
+Error: Error 1062: Duplicate entry 'Brown1' for key 'admin_info.name_unique'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  shop/internal/logic/admin.(*sAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/logic/admin/admin.go:41
+9.  shop/internal/controller.(*cAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/controller/admin.go:20
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-03-30 13:14:26.304 [DEBU] {282b4d6d7e1a5117ab73be005d844a48} [ 12 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 13:14:26.306 [ERRO] {282b4d6d7e1a5117ab73be005d844a48} [  0 ms] [default] [gf-shop] [rows:0  ] INSERT INTO `admin_info`(`updated_at`,`user_salt`,`is_admin`,`name`,`password`,`created_at`,`role_ids`) VALUES('2023-03-30 13:14:26','4EjhvajaMa',0,'Brown1','283c0ae0e5e4e8cff2d28f7ebd46abfb','2023-03-30 13:14:26','') 
+Error: Error 1062: Duplicate entry 'Brown1' for key 'admin_info.name_unique'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  shop/internal/logic/admin.(*sAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/logic/admin/admin.go:41
+9.  shop/internal/controller.(*cAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/controller/admin.go:20
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-03-30 13:37:54.297 [DEBU] {3887b040c61b51176889171452ddfedf} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 13:37:54.305 [DEBU] {3887b040c61b51176889171452ddfedf} [  8 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 13:37:54.312 [ERRO] {3887b040c61b51176889171452ddfedf} [  6 ms] [default] [gf-shop] [rows:0  ] INSERT INTO `admin_info`(`updated_at`,`password`,`created_at`,`user_salt`,`is_admin`,`name`,`role_ids`) VALUES('2023-03-30 13:37:54','0b91dadbc76316e73fce1f1d8a215a66','2023-03-30 13:37:54','vlohHNMNLG',0,'Brown','') 
+Error: Error 1062: Duplicate entry 'Brown' for key 'admin_info.name_unique'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  shop/internal/logic/admin.(*sAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/logic/admin/admin.go:49
+9.  shop/internal/controller.(*cAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/controller/admin.go:20
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-03-30 13:40:34.964 [DEBU] {f8d171a9eb1b511790b3ae0f908eff0b} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 13:40:34.965 [DEBU] {f8d171a9eb1b511790b3ae0f908eff0b} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 13:40:34.968 [ERRO] {f8d171a9eb1b511790b3ae0f908eff0b} [  1 ms] [default] [gf-shop] [rows:0  ] INSERT INTO `admin_info`(`created_at`,`role_ids`,`user_salt`,`is_admin`,`name`,`password`,`updated_at`) VALUES('2023-03-30 13:40:34','','YsGmez2RP9',0,'Brown','4472e2d567b33e3d740e48e611596260','2023-03-30 13:40:34') 
+Error: Error 1062: Duplicate entry 'Brown' for key 'admin_info.name_unique'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  shop/internal/logic/admin.(*sAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/logic/admin/admin.go:49
+9.  shop/internal/controller.(*cAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/controller/admin.go:20
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-03-30 13:42:16.448 [DEBU] {40e8ec49031c5117ce7711234eb82e75} [  9 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 13:42:16.453 [DEBU] {40e8ec49031c5117ce7711234eb82e75} [  4 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 13:55:42.135 [DEBU] {30b050e0be1c5117c94a18227f58ee02} [ 11 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 13:55:42.137 [DEBU] {30b050e0be1c5117c94a18227f58ee02} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:01:21.298 [DEBU] {9832bfd80d1d5117ca4a1822069039e0} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:01:22.271 [DEBU] {1865dc120e1d5117cb4a1822e397dfec} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:02:22.014 [DEBU] {a8fff7fa1b1d5117cc4a18226b3722a1} [ 14 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:02:22.740 [DEBU] {48f517271c1d5117cd4a182218add46d} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:02:31.100 [DEBU] {388459191e1d5117ce4a1822a0f5f78c} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:02:31.845 [DEBU] {5883ea451e1d5117cf4a18224c1bca64} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:02:46.849 [DEBU] {60c466c3211d5117d04a1822e61325fb} [  8 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:02:47.572 [DEBU] {509e43ef211d5117d14a1822f4b7b187} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:03:00.017 [DEBU] {a8e5c5d4241d511741b2ef4d640a8222} [  5 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:03:00.018 [DEBU] {a8e5c5d4241d511741b2ef4d640a8222} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:03:01.018 [DEBU] {a8b04b10251d511742b2ef4d7aaecef9} [  6 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:04:24.900 [DEBU] {1853a397381d5117853a156f58f36dba} [ 11 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:04:24.902 [DEBU] {1853a397381d5117853a156f58f36dba} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:04:26.033 [DEBU] {00f4d0db381d5117863a156f08ecf598} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:09:48.304 [DEBU] {887f3ce4831d5117c1b0915ca3310f31} [  7 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:09:48.306 [DEBU] {887f3ce4831d5117c1b0915ca3310f31} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:09:58.559 [DEBU] {68c5a147861d5117fd32ab0124d4620e} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:09:58.563 [DEBU] {68c5a147861d5117fd32ab0124d4620e} [  4 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:09:59.354 [DEBU] {d8e87977861d5117fe32ab01f550efd4} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:09:59.878 [DEBU] {80708a96861d5117ff32ab0152398180} [  4 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:10:00.618 [DEBU] {88adbec2861d51170033ab017dc6090b} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:10:01.099 [DEBU] {b85371df861d51170133ab015dc37f5e} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:10:20.968 [DEBU] {f8caa17f8b1d51170233ab01549d1588} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:10:22.951 [DEBU] {70746ef58b1d5117159aea2b45743b22} [  8 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:10:22.953 [DEBU] {70746ef58b1d5117159aea2b45743b22} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:11:00.063 [DEBU] {784ac099941d51173a347f14e4d273b2} [  5 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:11:00.064 [DEBU] {784ac099941d51173a347f14e4d273b2} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:21:04.354 [DEBU] {c0bffa4b211e5117116b3d7023d520c7} [  8 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:21:04.356 [DEBU] {c0bffa4b211e5117116b3d7023d520c7} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:21:05.541 [DEBU] {80713793211e5117126b3d706b90b6ef} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:30.148 [DEBU] {68ae133e431e5117c0cc4469f6badc9b} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:23:30.158 [DEBU] {68ae133e431e5117c0cc4469f6badc9b} [  6 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:31.364 [DEBU] {e06bc786431e511789f145117a65cf9b} [  4 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:23:31.367 [DEBU] {e06bc786431e511789f145117a65cf9b} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:32.140 [DEBU] {300b31b5431e51178af14511deb82e73} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:32.840 [DEBU] {30c6fbde431e51178bf145114af3cb29} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:33.438 [DEBU] {c85fa602441e51178cf14511a410c44d} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:33.991 [DEBU] {70a78b23441e51178df145116be40ac4} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:34.502 [DEBU] {307f1142441e51178ef14511ff465a86} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:35.002 [DEBU] {e0c9ad5f441e51178ff145111c3e114e} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:52.588 [DEBU] {18bbfe77481e511790f1451169c12d73} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:53.203 [DEBU] {783faf9c481e511791f1451123d25dea} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:53.703 [DEBU] {58cd7dba481e511792f145112e15083f} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:54.187 [DEBU] {00d55bd7481e511793f14511f33b77b8} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:23:54.435 [DEBU] {903e2be6481e511794f145113770a543} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 14:27:30.615 [DEBU] {1034103b7b1e511751c215706ee997bf} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 14:27:30.620 [ERRO] {1034103b7b1e511751c215706ee997bf} [  3 ms] [default] [gf-shop] [rows:0  ] INSERT INTO `admin_info`(`password`,`created_at`,`user_salt`,`is_admin`,`name`,`role_ids`,`updated_at`) VALUES('cd18815cf116f7eed7b19fd419d0cf4d','2023-03-30 14:27:30','u2rBdO7g6o',0,'Brown','','2023-03-30 14:27:30') 
+Error: Error 1062: Duplicate entry 'Brown' for key 'admin_info.name_unique'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  shop/internal/logic/admin.(*sAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/logic/admin/admin.go:52
+9.  shop/internal/controller.(*cAdmin).Create
+    /Users/asura/code/go/gf/star-shop/internal/controller/admin.go:20
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/asura/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-03-30 16:01:31.799 [DEBU] {7821ecab9c235117634bd16ae72af33a} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:01:31.801 [DEBU] {7821ecab9c235117634bd16ae72af33a} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:01:38.476 [DEBU] {0060403a9e235117644bd16ac09eb2be} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='brown' LIMIT 1
+2023-03-30 16:01:39.303 [DEBU] {c0db8c6b9e235117654bd16a559a8511} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='brown' LIMIT 1
+2023-03-30 16:01:40.110 [DEBU] {e86ca89b9e235117664bd16acaa742e2} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='brown' LIMIT 1
+2023-03-30 16:01:40.856 [DEBU] {10661ec89e235117674bd16acdd4ad13} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='brown' LIMIT 1
+2023-03-30 16:01:41.468 [DEBU] {206b99ec9e235117684bd16aff40d6e1} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='brown' LIMIT 1
+2023-03-30 16:01:44.683 [DEBU] {905632ac9f235117694bd16ab5b0c5be} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='brown' LIMIT 1
+2023-03-30 16:01:50.587 [DEBU] {003c770ba12351176a4bd16a4de5192f} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:01:51.266 [DEBU] {28589134a12351176b4bd16a9209f9ca} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:01:51.567 [DEBU] {b0728c46a12351176c4bd16ae75ce413} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:02:58.226 [DEBU] {80ad6acbb0235117517311030336e014} [  4 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:02:58.230 [DEBU] {80ad6acbb0235117517311030336e014} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:02:59.283 [DEBU] {880db90ab1235117527311036398d569} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:02:59.971 [DEBU] {b8e39833b123511753731103c17a630e} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:03:09.245 [DEBU] {30b0065cb3235117a1b10d23b3400c39} [  7 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:03:09.250 [DEBU] {30b0065cb3235117a1b10d23b3400c39} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:03:10.205 [DEBU] {9034b695b3235117a2b10d23dd4cd5de} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:03:26.773 [DEBU] {c8454c71b7235117a3b10d23c7a182e2} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:05:54.423 [DEBU] {e8f7b0d1d92351172876d32afae2c554} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:05:54.426 [DEBU] {e8f7b0d1d92351172876d32afae2c554} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:05:55.376 [DEBU] {c035ad0ada2351172976d32ab642cd3c} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:05:56.067 [DEBU] {a0c7df33da2351172a76d32a2a8fcc72} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:06:25.486 [DEBU] {f861210de12351172c18ac765ea5262b} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:06:25.487 [DEBU] {f861210de12351172c18ac765ea5262b} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:07:49.250 [DEBU] {20afc78df42351170943931eb47e862a} [  4 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:07:49.252 [DEBU] {20afc78df42351170943931eb47e862a} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:08:06.104 [DEBU] {e0cab47af82351170a43931e394c086b} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:08:07.780 [DEBU] {d8c819def823511769697b1dbb988430} [  5 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:08:07.781 [DEBU] {d8c819def823511769697b1dbb988430} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:08:08.920 [DEBU] {78908122f92351176a697b1d4d38bde9} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:25:09.087 [DEBU] {f0aacaa8e624511768cc815884b554c5} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:25:09.088 [DEBU] {f0aacaa8e624511768cc815884b554c5} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:25:10.944 [DEBU] {986ee517e724511769cc8158dcffcd1a} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:28:01.496 [DEBU] {985e45cd0e25511748a2c1096bb5b11f} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:28:01.497 [DEBU] {985e45cd0e25511748a2c1096bb5b11f} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:32:31.480 [DEBU] {10f971a94d25511711e908798cb8ae16} [  5 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:32:31.483 [DEBU] {10f971a94d25511711e908798cb8ae16} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:32:49.725 [DEBU] {209757e95125511715e908792a3ddd26} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:32:50.205 [DEBU] {a06cf9055225511719e90879b3be1b64} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:32:50.754 [DEBU] {88dbb326522551171de908795f55545d} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:33:30.070 [DEBU] {e8fa864d5b25511710452059e19faca8} [  5 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:33:30.070 [DEBU] {e8fa864d5b25511710452059e19faca8} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:34:05.321 [DEBU] {e80c148363255117abbb2343c07f034e} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:34:05.327 [DEBU] {e80c148363255117abbb2343c07f034e} [  5 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 16:36:51.035 [DEBU] {98370a188a255117a8c68007593c5a42} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 16:36:51.036 [DEBU] {98370a188a255117a8c68007593c5a42} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:02:47.820 [DEBU] {9881558ff42651172abb3a3b959d00cc} [ 11 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:02:47.824 [DEBU] {9881558ff42651172abb3a3b959d00cc} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:03:03.648 [DEBU] {40ff533ff8265117c8f26d5661c09f4b} [  2 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:03:03.652 [DEBU] {40ff533ff8265117c8f26d5661c09f4b} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:03:04.656 [DEBU] {c034a37bf8265117cef26d561c778070} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:03:17.735 [DEBU] {38e6e386fb265117abcf3469157773f6} [  4 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:03:17.736 [DEBU] {38e6e386fb265117abcf3469157773f6} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:03:18.907 [DEBU] {f0f81dcdfb265117b1cf346942abe6a8} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:03:19.592 [DEBU] {8001f3f5fb265117b7cf3469cf2e00b6} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:03:20.175 [DEBU] {a81db418fc265117bdcf34694fde50bb} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:03:39.011 [DEBU] {3823597a0027511781437b4a3dd399db} [ 14 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:03:39.012 [DEBU] {3823597a0027511781437b4a3dd399db} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:03:39.697 [DEBU] {b08743a40027511787437b4a209db365} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:04:01.302 [DEBU] {281046ab05275117de859e23d57eeac5} [  5 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:04:01.304 [DEBU] {281046ab05275117de859e23d57eeac5} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:04:02.285 [DEBU] {c8999ae605275117e4859e2399db1d29} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:04:13.448 [DEBU] {6890bd7f08275117861c200dcfff482b} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:04:13.451 [DEBU] {6890bd7f08275117861c200dcfff482b} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:04:22.983 [DEBU] {c83f0fb80a2751172edd2927892d920d} [  4 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:04:22.985 [DEBU] {c83f0fb80a2751172edd2927892d920d} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:04:23.695 [DEBU] {a836bde20a27511734dd292780963c34} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:04:47.068 [DEBU] {a0ad6e5310275117d89024300d0cb91e} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:04:47.070 [DEBU] {a0ad6e5310275117d89024300d0cb91e} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:14:08.902 [DEBU] {e0356723932751174e8e3b54a541b522} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:14:08.904 [DEBU] {e0356723932751174e8e3b54a541b522} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:14:10.221 [DEBU] {c012657293275117548e3b54a999da00} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:14:39.560 [DEBU] {d84ff8469a2751175a8e3b549c9fb4d7} [  5 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:14:40.742 [DEBU] {6838488d9a2751173348b253056011db} [  4 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:14:40.744 [DEBU] {6838488d9a2751173348b253056011db} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:14:41.729 [DEBU] {c0227ac89a2751173948b2537a0c29de} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:14:42.415 [DEBU] {78262cf19a2751173f48b253499fd049} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:14:57.883 [DEBU] {201b338b9e275117c84fb31f4fd940d3} [  2 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:14:57.884 [DEBU] {201b338b9e275117c84fb31f4fd940d3} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:14:59.629 [DEBU] {28bc9bf19e275117fbe53d3fa9c30fda} [ 16 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:14:59.631 [DEBU] {28bc9bf19e275117fbe53d3fa9c30fda} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:15:00.317 [DEBU] {68e9671c9f27511701e63d3fcdcaed7a} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:17:46.795 [DEBU] {e02de0dec5275117a384b1575cf84a97} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:17:46.797 [DEBU] {e02de0dec5275117a384b1575cf84a97} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 17:19:46.373 [DEBU] {58444ab6e127511721cc38741affb1a4} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 17:19:46.375 [DEBU] {58444ab6e127511721cc38741affb1a4} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 18:38:59.194 [DEBU] {b805c450342c511758e246279138aef2} [  2 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 18:38:59.195 [DEBU] {b805c450342c511758e246279138aef2} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 18:38:59.940 [DEBU] {b8eb607d342c51175ee2462786897e75} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 18:42:10.409 [DEBU] {30b55ed5602c51170f9b5d1c0d4220d1} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 18:42:10.414 [DEBU] {30b55ed5602c51170f9b5d1c0d4220d1} [  4 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 18:42:41.930 [DEBU] {88bddb2c682c5117b2d8a22a822e627c} [  2 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-03-30 18:42:41.930 [DEBU] {88bddb2c682c5117b2d8a22a822e627c} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-03-30 18:42:42.948 [DEBU] {e028ae69682c5117b5d8a22a1ca7a6c9} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
