@@ -21,6 +21,7 @@ const (
 
 // 业务相关错误码
 const (
-	AdminNotFound  int = 200001
-	AdminNameExist int = 200002
+	AdminNotFound            int = 200001
+	AdminNameExist           int = 200002
+	AdminNameOrPasswordError int = 200003
 )

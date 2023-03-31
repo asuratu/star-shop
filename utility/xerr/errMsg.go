@@ -29,6 +29,7 @@ func init() {
 	// 用户模块
 	message[consts.AdminNotFound] = "用户不存在"
 	message[consts.AdminNameExist] = "用户已存在"
+	message[consts.AdminNameOrPasswordError] = "用户名或密码错误"
 }
 
 func MapErrMsg(errcode int) string {

@@ -123,7 +123,7 @@ func (s *sMiddleware) Auth(r *ghttp.Request) {
 
 var GToken *gtoken.GfToken
 
-// Gtoken鉴权
+// GTokenSetCtx gtoken鉴权
 func (s *sMiddleware) GTokenSetCtx(r *ghttp.Request) {
 	var tokenInfo TokenInfo
 	token := GToken.GetTokenData(r)
