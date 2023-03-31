@@ -24,8 +24,8 @@ func (a *cLogin) Login(ctx context.Context, req *backend.LoginDoReq) (res *backe
 		return
 	}
 	// 识别并跳转到登录前页面
-	//res.Info = service.Session().GetUser(ctx)
-	res.Info = service.BizCtx().Get(ctx).User
+	res.Info = service.Session().GetUser(ctx)
+	//res.Info = service.BizCtx().Get(ctx).User
 	return
 }
 
