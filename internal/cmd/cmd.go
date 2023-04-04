@@ -33,6 +33,7 @@ var (
 					controller.Position,     // 手工位
 					controller.Admin.Create, // 管理员
 					controller.Admin.Update, // 管理员
+					controller.Admin.Delete, // 管理员
 					controller.Login,        // 登录
 				)
 				// 需要登录的路由组绑定

@@ -1,4 +1,4 @@
-package rotation
+package admin
 
 import (
 	"context"
