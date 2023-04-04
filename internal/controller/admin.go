@@ -3,12 +3,11 @@ package controller
 import (
 	"context"
 
+	"github.com/gogf/gf/v2/util/gconv"
+
 	"shop/api/v1/backend"
-	"shop/internal/consts"
 	"shop/internal/model"
 	"shop/internal/service"
-
-	"github.com/gogf/gf/v2/util/gconv"
 )
 
 // Admin 内容管理
@@ -32,24 +31,24 @@ func (a *cAdmin) Create(ctx context.Context, req *backend.AdminReq) (res *backen
 	return &backend.AdminRes{AdminId: out.AdminId}, nil
 }
 
-// for jwt
-//func (c *cAdmin) Info(ctx context.Context, req *backend.AdminGetInfoReq) (res *backend.AdminGetInfoRes, err error) {
-//	return &backend.AdminGetInfoRes{
-//		Id:          gconv.Int(service.Auth().GetIdentity(ctx)),
-//		IdentityKey: service.Auth().IdentityKey,
-//		Payload:     service.Auth().GetPayload(ctx),
-//	}, nil
-//}
+// Info for jwt
+func (c *cAdmin) Info(ctx context.Context, req *backend.AdminGetInfoReq) (res *backend.AdminGetInfoRes, err error) {
+	return &backend.AdminGetInfoRes{
+		Id:          gconv.Int(service.Auth().GetIdentity(ctx)),
+		IdentityKey: service.Auth().IdentityKey,
+		Payload:     service.Auth().GetPayload(ctx),
+	}, nil
+}
 
 // Info gtoken 版本返回结果
-func (a *cAdmin) Info(ctx context.Context, req *backend.AdminGetInfoReq) (res *backend.AdminGetInfoRes, err error) {
-	return &backend.AdminGetInfoRes{
-		Id:      gconv.Int(ctx.Value(consts.CtxAdminId)),
-		Name:    gconv.String(ctx.Value(consts.CtxAdminName)),
-		IsAdmin: gconv.Int(ctx.Value(consts.CtxAdminIsAdmin)),
-		RoleIds: gconv.String(ctx.Value(consts.CtxAdminRoleIds)),
-	}, err
-}
+//func (a *cAdmin) Info(ctx context.Context, req *backend.AdminGetInfoReq) (res *backend.AdminGetInfoRes, err error) {
+//	return &backend.AdminGetInfoRes{
+//		Id:      gconv.Int(ctx.Value(consts.CtxAdminId)),
+//		Name:    gconv.String(ctx.Value(consts.CtxAdminName)),
+//		IsAdmin: gconv.Int(ctx.Value(consts.CtxAdminIsAdmin)),
+//		RoleIds: gconv.String(ctx.Value(consts.CtxAdminRoleIds)),
+//	}, err
+//}
 
 func (a *cAdmin) Delete(ctx context.Context, req *backend.AdminDeleteReq) (res *backend.AdminDeleteRes, err error) {
 	err = service.Admin().Delete(ctx, req.Id)

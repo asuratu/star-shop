@@ -1,0 +1,22 @@
+2023-04-04 09:13:36.198 [DEBU] {b8b548d640965217d1cb374599bea985} [ 13 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-04-04 09:13:36.209 [DEBU] {b8b548d640965217d1cb374599bea985} [ 10 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown1' LIMIT 1
+2023-04-04 09:14:42.077 [DEBU] {d065e72d509652176acbae3c6a376b25} [  2 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-04-04 09:14:42.077 [DEBU] {d065e72d509652176acbae3c6a376b25} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown1' LIMIT 1
+2023-04-04 09:15:36.630 [DEBU] {08b5f5e05c9652179a4a6c22b660d685} [  9 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-04-04 09:15:36.637 [DEBU] {08b5f5e05c9652179a4a6c22b660d685} [  6 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown1' LIMIT 1
+2023-04-04 09:16:27.788 [DEBU] {d0c176ca68965217bb65ad09b3d3901f} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-04-04 09:16:27.790 [DEBU] {d0c176ca68965217bb65ad09b3d3901f} [  2 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown1' LIMIT 1
+2023-04-04 09:17:08.657 [DEBU] {28ef7c4e72965217ee9e335a31876ba2} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-04-04 09:17:08.659 [DEBU] {28ef7c4e72965217ee9e335a31876ba2} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown1' LIMIT 1
+2023-04-04 09:20:40.947 [DEBU] {c8eafbbba396521767feb55032f7dc68} [  6 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-04-04 09:20:40.948 [DEBU] {c8eafbbba396521767feb55032f7dc68} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown1' LIMIT 1
+2023-04-04 09:46:06.986 [DEBU] {3075ec0a079852172c30bf32c6da045a} [  7 ms] [default] [gf-shop] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2023-04-04 09:46:06.990 [DEBU] {3075ec0a079852172c30bf32c6da045a} [  3 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 1,1
+2023-04-04 09:46:06.991 [DEBU] {3075ec0a079852172c30bf32c6da045a} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-04-04 09:46:08.537 [DEBU] {9004d767079852172d30bf32b5cc9e62} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`pic_url`,`link`,`goods_name`,`goods_id`,`sort`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 1,1
+2023-04-04 09:46:08.538 [DEBU] {9004d767079852172d30bf32b5cc9e62} [  0 ms] [default] [gf-shop] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2023-04-04 09:49:01.975 [DEBU] {d8c15bc92f9852172e30bf32d6deed34} [  3 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-04-04 09:49:01.977 [DEBU] {d8c15bc92f9852172e30bf32d6deed34} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown' LIMIT 1
+2023-04-04 09:49:10.513 [DEBU] {b0fa69c6319852172f30bf32ec309f95} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown1' LIMIT 1
+2023-04-04 10:10:58.050 [DEBU] {e04157356299521732af82793232dfe3} [  5 ms] [default] [gf-shop] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-04-04 10:10:58.053 [DEBU] {e04157356299521732af82793232dfe3} [  1 ms] [default] [gf-shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE `name`='Brown1' LIMIT 1

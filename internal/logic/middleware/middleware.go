@@ -93,6 +93,10 @@ func (s *sMiddleware) Ctx(r *ghttp.Request) {
 		Session: r.Session,
 		Data:    make(g.Map),
 	}
+
+	// q: laravel中chunkById()方法如何使用?
+	// a: https://learnku.com/articles/41900
+
 	service.BizCtx().Init(r, customCtx)
 	if userEntity := service.Session().GetUser(r.Context()); userEntity.Id > 0 {
 		customCtx.User = &model.ContextUser{

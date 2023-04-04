@@ -20,7 +20,7 @@ func init() {
 		Realm:           "shop",
 		Key:             []byte("secret key"),
 		Timeout:         time.Minute * 60,
-		MaxRefresh:      time.Minute * 60,
+		MaxRefresh:      time.Minute * 120,
 		IdentityKey:     "id",
 		TokenLookup:     "header: Authorization, query: token, cookie: jwt",
 		TokenHeadName:   "Bearer",

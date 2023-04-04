@@ -352,3 +352,9 @@ func FormatTime(second int) string {
 	)
 	return fmt.Sprintf("%d时%d分%d秒", hour, minute, sec)
 }
+
+// TimeNowInTimezone 获取当前时间，支持时区
+func TimeNowInTimezone() time.Time {
+	timezone, _ := time.LoadLocation("Asia/Shanghai")
+	return time.Now().In(timezone)
+}

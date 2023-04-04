@@ -28,7 +28,11 @@ var (
 				)
 				// 不需要登录的路由组绑定
 				group.Bind(
+					controller.Hello,        //示例
+					controller.Rotation,     // 轮播图
+					controller.Position,     // 手工位
 					controller.Admin.Create, // 管理员
+					controller.Admin.Update, // 管理员
 					controller.Login,        // 登录
 				)
 				// 需要登录的路由组绑定
@@ -37,14 +41,11 @@ var (
 					//if err != nil {
 					//	panic(err)
 					//}
-					group.Bind(
-						controller.Admin.List,   // 管理员
-						controller.Admin.Update, // 管理员
-						controller.Admin.Delete, // 管理员
-						controller.Admin.Info,   // 查询当前管理员信息
-						controller.Rotation,     // 轮播图
-						controller.Position,     // 手工位
-					)
+					group.Middleware(service.Middleware().Auth)
+					group.ALLMap(g.Map{
+						"/backend/admin/info": controller.Admin.Info,
+						//"/backend/admin/update/me": controller.Admin.Update,
+					})
 				})
 			})
 			s.SetSessionMaxAge(time.Minute)
